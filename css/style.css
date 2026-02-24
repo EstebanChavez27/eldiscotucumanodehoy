@@ -1,0 +1,696 @@
+/* ════════════════════════════════════════════
+   DISCOS TUCUMANOS — Hoja de estilos principal
+   ════════════════════════════════════════════ */
+
+/* ── VARIABLES ── */
+:root {
+  --cream: #f5f0e8;
+  --paper: #ede7d9;
+  --ink: #1a1410;
+  --sepia: #6b4f35;
+  --rust: #c0392b;
+  --gold: #b8860b;
+  --green-vinyl: #1db954;
+  --yt-red: #ff0000;
+  --shadow: rgba(26, 20, 16, 0.15);
+}
+
+/* ── RESET ── */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ── BASE ── */
+body {
+  background-color: var(--cream);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Libre Baskerville', Georgia, serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ════════════════════════════════════════════
+   HEADER
+   ════════════════════════════════════════════ */
+header {
+  border-bottom: 2px solid var(--ink);
+  padding: 0 2rem;
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.header-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1.2rem 2rem 1.2rem 0;
+  border-right: 1px solid var(--ink);
+  flex-shrink: 0;
+}
+
+.site-name {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.6rem, 4vw, 2.8rem);
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  color: var(--ink);
+}
+
+.site-tagline {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--sepia);
+  margin-top: 0.3rem;
+}
+
+.header-center {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.date-display {
+  text-align: center;
+}
+
+.date-day {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 900;
+  line-height: 1;
+  color: var(--ink);
+  opacity: 0.08;
+  pointer-events: none;
+  user-select: none;
+}
+
+.date-full {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--sepia);
+  margin-top: -0.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  padding: 1rem 0 1rem 2rem;
+  border-left: 1px solid var(--ink);
+  flex-shrink: 0;
+}
+
+.issue-info {
+  text-align: right;
+}
+
+.issue-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--sepia);
+}
+
+.issue-number {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.1;
+}
+
+/* ════════════════════════════════════════════
+   MAIN LAYOUT
+   ════════════════════════════════════════════ */
+main {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+  gap: 3rem;
+  align-items: start;
+}
+
+/* ── Shared section label ── */
+.section-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--sepia);
+  border-top: 1px solid var(--sepia);
+  padding-top: 0.5rem;
+  margin-bottom: 0.8rem;
+}
+
+/* ════════════════════════════════════════════
+   LEFT COLUMN — ficha técnica
+   ════════════════════════════════════════════ */
+.left-col {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding-top: 1rem;
+}
+
+.album-meta-block {
+  display: flex;
+  flex-direction: column;
+}
+
+.meta-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  border-bottom: 1px dotted rgba(107, 79, 53, 0.3);
+  padding: 0.35rem 0;
+  gap: 1rem;
+}
+
+.meta-key {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--sepia);
+  flex-shrink: 0;
+}
+
+.meta-val {
+  font-size: 0.85rem;
+  color: var(--ink);
+  text-align: right;
+}
+
+.genre-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.genre-tag {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border: 1px solid var(--sepia);
+  color: var(--sepia);
+  padding: 0.2rem 0.5rem;
+  border-radius: 2px;
+}
+
+/* ════════════════════════════════════════════
+   CENTER COLUMN — portada + acciones
+   ════════════════════════════════════════════ */
+.center-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+/* ── Album title block ── */
+.album-title-block {
+  text-align: center;
+}
+
+.album-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-weight: 900;
+  line-height: 1.1;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+}
+
+.album-year {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.9rem;
+  color: var(--sepia);
+  font-weight: 300;
+  margin-top: 0.2rem;
+}
+
+.artist-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  font-style: italic;
+  color: var(--sepia);
+  margin-top: 0.3rem;
+}
+
+/* ── CD Case ── */
+.cd-case-wrapper {
+  position: relative;
+  width: min(360px, 90vw);
+  cursor: pointer;
+}
+
+.cd-case {
+  position: relative;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow:
+    inset -3px 0 8px rgba(0, 0, 0, 0.3),
+    inset 3px 0 6px rgba(255, 255, 255, 0.6),
+    4px 8px 30px var(--shadow),
+    1px 2px 6px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  aspect-ratio: 1 / 1;
+  background: #ddd;
+  transition:
+    transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    box-shadow 0.4s;
+}
+
+.cd-case:hover {
+  transform: scale(1.02) rotate(-0.5deg);
+  box-shadow:
+    inset -3px 0 8px rgba(0, 0, 0, 0.3),
+    inset 3px 0 6px rgba(255, 255, 255, 0.6),
+    8px 16px 50px var(--shadow),
+    2px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.cd-spine {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 14px;
+  background: linear-gradient(135deg, #111 0%, #2a2a2a 50%, #111 100%);
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 2px;
+  box-shadow: inset -2px 0 4px rgba(0, 0, 0, 0.5);
+}
+
+.spine-title {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  transform: rotate(180deg);
+  font-family: 'DM Mono', monospace;
+  font-size: 7px;
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.6);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-height: 90%;
+}
+
+.cd-cover {
+  position: absolute;
+  left: 14px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+}
+
+.cd-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: opacity 0.5s;
+}
+
+.cd-cover-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #e8e0d0 0%, #d4c9b4 100%);
+  color: var(--sepia);
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 0.9rem;
+  text-align: center;
+  padding: 2rem;
+}
+
+/* Plastic glare overlay */
+.cd-glare {
+  position: absolute;
+  left: 14px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg,
+      rgba(255, 255, 255, 0.18) 0%,
+      rgba(255, 255, 255, 0.05) 30%,
+      transparent 50%,
+      rgba(255, 255, 255, 0.03) 80%,
+      rgba(255, 255, 255, 0.08) 100%);
+  pointer-events: none;
+  z-index: 2;
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Case border */
+.cd-border {
+  position: absolute;
+  inset: 0;
+  border: 1.5px solid rgba(255, 255, 255, 0.25);
+  border-radius: 4px;
+  pointer-events: none;
+  z-index: 4;
+}
+
+/* ── Actions ── */
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.action-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  flex-shrink: 0;
+}
+
+.action-btn:hover {
+  transform: translateY(-3px) scale(1.08);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+.action-btn:active {
+  transform: scale(0.95);
+}
+
+.btn-spotify {
+  background: var(--green-vinyl);
+}
+
+.btn-youtube {
+  background: var(--yt-red);
+}
+
+.btn-share {
+  background: transparent;
+  border: 1.5px solid var(--ink);
+  box-shadow: none;
+}
+
+.action-btn svg {
+  display: block;
+}
+
+.artist-link {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--sepia);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.artist-link:hover {
+  border-color: var(--sepia);
+  color: var(--ink);
+}
+
+/* ════════════════════════════════════════════
+   RIGHT COLUMN — descripción + tracklist
+   ════════════════════════════════════════════ */
+.right-col {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding-top: 1rem;
+}
+
+.description-text {
+  font-size: 0.9rem;
+  line-height: 1.75;
+  color: var(--ink);
+  font-style: italic;
+}
+
+.tracklist {
+  list-style: none;
+  counter-reset: track;
+}
+
+.tracklist li {
+  counter-increment: track;
+  display: flex;
+  align-items: baseline;
+  gap: 0.8rem;
+  padding: 0.35rem 0;
+  border-bottom: 1px dotted rgba(107, 79, 53, 0.2);
+  font-size: 0.82rem;
+  line-height: 1.3;
+}
+
+.tracklist li::before {
+  content: counter(track, decimal-leading-zero);
+  font-family: 'DM Mono', monospace;
+  font-size: 0.6rem;
+  color: var(--sepia);
+  flex-shrink: 0;
+  padding-top: 0.1rem;
+}
+
+.track-name {
+  color: var(--ink);
+  flex: 1;
+}
+
+.track-duration {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.65rem;
+  color: var(--sepia);
+  flex-shrink: 0;
+}
+
+/* ════════════════════════════════════════════
+   FOOTER
+   ════════════════════════════════════════════ */
+footer {
+  border-top: 2px solid var(--ink);
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.footer-left {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--sepia);
+}
+
+.footer-nav {
+  display: flex;
+  gap: 2rem;
+}
+
+.footer-nav a {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--sepia);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s;
+}
+
+.footer-nav a:hover {
+  border-color: var(--sepia);
+}
+
+/* ════════════════════════════════════════════
+   TOAST NOTIFICATION
+   ════════════════════════════════════════════ */
+.toast {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%) translateY(100px);
+  background: var(--ink);
+  color: var(--cream);
+  font-family: 'DM Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  padding: 0.7rem 1.5rem;
+  border-radius: 2px;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  z-index: 100;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.toast.show {
+  transform: translateX(-50%) translateY(0);
+}
+
+/* ════════════════════════════════════════════
+   LOADING SHIMMER
+   ════════════════════════════════════════════ */
+.loading-cover {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, #e0d8c8 25%, #ede7d9 50%, #e0d8c8 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.8s infinite;
+}
+
+/* ════════════════════════════════════════════
+   ANIMATIONS
+   ════════════════════════════════════════════ */
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-in {
+  opacity: 0;
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.left-col .animate-in:nth-child(1) {
+  animation-delay: 0.05s;
+}
+
+.left-col .animate-in:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.center-col .animate-in:nth-child(1) {
+  animation-delay: 0.10s;
+}
+
+.center-col .animate-in:nth-child(2) {
+  animation-delay: 0.20s;
+}
+
+.center-col .animate-in:nth-child(3) {
+  animation-delay: 0.30s;
+}
+
+.right-col .animate-in:nth-child(1) {
+  animation-delay: 0.15s;
+}
+
+.right-col .animate-in:nth-child(2) {
+  animation-delay: 0.25s;
+}
+
+/* ════════════════════════════════════════════
+   RESPONSIVE
+   ════════════════════════════════════════════ */
+@media (max-width: 900px) {
+  main {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    padding: 2rem 1.5rem;
+    gap: 2rem;
+  }
+
+  .left-col {
+    order: 2;
+  }
+
+  .center-col {
+    order: 1;
+  }
+
+  .right-col {
+    order: 3;
+  }
+
+  header {
+    flex-wrap: wrap;
+    padding: 1rem;
+  }
+
+  .header-center {
+    order: 3;
+    width: 100%;
+    border-top: 1px solid rgba(26, 20, 16, 0.15);
+    padding: 0.5rem 0;
+  }
+
+  .date-day {
+    font-size: 2.5rem;
+  }
+
+  .header-left {
+    border-right: none;
+    padding-right: 0;
+  }
+
+  .header-right {
+    border-left: none;
+    padding-left: 0;
+  }
+
+  footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.8rem;
+  }
+}
+
+/* Oculta la sección de tracklist para que no quede el espacio en blanco */
+.right-col div.animate-in:has(#tracklist) {
+  display: none !important;
+}

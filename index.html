@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Discos Tucumanos — Un álbum por día</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Mono:wght@300;400;500&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap"
+    rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+</head>
+
+<body>
+
+  <!-- ── HEADER ── -->
+  <header>
+    <div class="header-left">
+      <div class="site-name">El Disco Tucumano de Hoy</div>
+      <div class="site-tagline">Un álbum por día · desde el NOA</div>
+    </div>
+    <div class="header-center">
+      <div class="date-display">
+        <div class="date-day" id="hdr-day"></div>
+        <div class="date-full" id="hdr-date"></div>
+      </div>
+    </div>
+    <div class="header-right">
+      <div class="issue-info">
+        <div class="issue-label">Edición</div>
+        <div class="issue-number" id="issue-num">#001</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ── MAIN ── -->
+  <main>
+
+    <!-- LEFT: ficha técnica -->
+    <div class="left-col">
+      <div class="animate-in">
+        <div class="section-label">Ficha técnica</div>
+        <div class="album-meta-block" id="meta-block"></div>
+      </div>
+      <div class="animate-in" id="genre-section">
+        <div class="section-label">Géneros</div>
+        <div class="genre-tags" id="genre-tags"></div>
+      </div>
+    </div>
+
+    <!-- CENTER: portada + acciones -->
+    <div class="center-col">
+      <div class="album-title-block animate-in">
+        <div class="album-title" id="album-title">—</div>
+        <div class="album-year" id="album-year"></div>
+        <div class="artist-name" id="artist-name">—</div>
+      </div>
+
+      <div class="cd-case-wrapper animate-in">
+        <div class="cd-case" id="cd-case">
+          <div class="cd-spine">
+            <div class="spine-title" id="spine-title"></div>
+          </div>
+          <div class="cd-cover" id="cd-cover">
+            <div class="loading-cover"></div>
+          </div>
+          <div class="cd-glare"></div>
+          <div class="cd-border"></div>
+        </div>
+      </div>
+
+      <div class="actions animate-in">
+        <a class="action-btn btn-spotify" id="btn-spotify" href="#" target="_blank" rel="noopener"
+          title="Escuchar en Spotify">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+            <path
+              d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm4.586 14.424a.622.622 0 01-.857.207c-2.348-1.435-5.304-1.76-8.785-.964a.623.623 0 01-.277-1.215c3.809-.87 7.076-.496 9.712 1.115a.623.623 0 01.207.857zm1.223-2.722a.78.78 0 01-1.072.257c-2.687-1.652-6.785-2.131-9.965-1.166a.78.78 0 01-.973-.519.781.781 0 01.52-.972c3.632-1.102 8.147-.568 11.233 1.328a.78.78 0 01.257 1.072zm.105-2.835c-3.223-1.914-8.54-2.09-11.618-1.156a.935.935 0 11-.543-1.79c3.532-1.072 9.404-.865 13.115 1.338a.936.936 0 01-1.027 1.559.943.943 0 01-.927-.95z" />
+          </svg>
+        </a>
+
+        <a class="action-btn btn-youtube" id="btn-youtube" href="#" target="_blank" rel="noopener"
+          title="Escuchar en YouTube Music">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+            <path
+              d="M21.543 6.498C22 8.28 22 12 22 12s0 3.72-.457 5.502c-.254.985-.997 1.76-1.938 2.022C17.896 20 12 20 12 20s-5.893 0-7.605-.476c-.945-.266-1.687-1.04-1.938-2.022C2 15.72 2 12 2 12s0-3.72.457-5.502c.254-.985.997-1.76 1.938-2.022C6.107 4 12 4 12 4s5.896 0 7.605.476c.945.266 1.687 1.04 1.938 2.022zM10 15.5l6-3.5-6-3.5v7z" />
+          </svg>
+        </a>
+
+        <button class="action-btn btn-share" id="btn-share" title="Compartir">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="18" cy="5" r="3" />
+            <circle cx="6" cy="12" r="3" />
+            <circle cx="18" cy="19" r="3" />
+            <line x1="8.59" y1="13.51" x2="15.42" y2="17.49" />
+            <line x1="15.41" y1="6.51" x2="8.59" y2="10.49" />
+          </svg>
+        </button>
+
+        <a class="artist-link" id="artist-web" href="#" target="_blank" rel="noopener">
+          Sitio del artista ↗
+        </a>
+      </div>
+    </div>
+
+    <!-- RIGHT: descripción + tracklist -->
+    <div class="right-col">
+      <div class="animate-in">
+        <div class="section-label">Sobre el álbum</div>
+        <p class="description-text" id="description"></p>
+      </div>
+      <div class="animate-in">
+        <div class="section-label">Tracklist</div>
+        <ul class="tracklist" id="tracklist"></ul>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <div class="footer-left">© <span id="footer-year"></span> Desarrollado con amor por <a href="https://paeti.com.ar"
+        target="_blank">Paetí</a>. Si necesitás una web para tu banda, proyecto artístico, productora, estudio, sala de
+      ensayo, teatro, o lo que sea, <a href="https://wa.link/xy0ozj">contactame aquí</a>.</div>
+    <nav class="footer-nav">
+      <a href="https://forms.gle/GxFXStfQcStopraYA" target="_blank">Proponer álbum</a>
+    </nav>
+  </footer>
+
+  <!-- Toast notification -->
+  <div class="toast" id="toast"></div>
+
+  <!-- Scripts -->
+  <script src="js/app.js"></script>
+
+</body>
+
+</html>
