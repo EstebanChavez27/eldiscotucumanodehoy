@@ -17,7 +17,7 @@
  *  2. Seleccioná la hoja "Álbumes" y el formato "CSV"
  *  3. Copiá la URL y pegala aquí
  */
-const SHEET_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTG8DJ_rNb6G0pwGQ_yNS94cO-N9APKmI55Wk4Z8n56QXNyXkT6mQubWWKhbQ9bquX-Hkw8EdQNKY4M/pub?gid=1201309294&single=true&output=csv";
+const SHEET_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTG8DJ_rNb6G0pwGQ_yNS94cO-N9APKmI55Wk4Z8n56QXNyXkT6mQubWWKhbQ9bquX-Hkw8EdQNKY4M/pub?gid=125367015&single=true&output=csv";
 
 /** Minutos de caché por sesión (evita fetches repetidos al navegar) */
 const CACHE_MINUTOS = 60;
