@@ -14,13 +14,8 @@
 
   <!-- Styles -->
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/modal.css">
   <link rel="icon" type="image/png" href="assets/favicon.png">
-  
-  <meta property="og:title" content="Discos Tucumanos — Un álbum por día">
-  <meta property="og:description" content="Descubrí la música de nuestra provincia. Un disco recomendado cada día.">
-  <meta property="og:image" content="https://eldiscotucumanodehoy.netlify.app/assets/og-image.png">
-  <meta property="og:url" content="https://eldiscotucumanodehoy.netlify.app">
-  <meta name="twitter:card" content="summary_large_image">
 </head>
 
 <body>
@@ -120,6 +115,7 @@
       <div class="animate-in">
         <div class="section-label">Sobre el álbum</div>
         <p class="description-text" id="description"></p>
+        <button class="read-more" id="btn-read-more" type="button" hidden>Leer más →</button>
       </div>
       <div class="animate-in">
         <div class="section-label">Tracklist</div>
@@ -133,11 +129,22 @@
   <footer>
     <div class="footer-left">© <span id="footer-year"></span> Desarrollado con amor por <a href="https://paeti.com.ar"
         target="_blank">Paetí</a>. Si necesitás una web para tu banda, proyecto artístico, productora, estudio, sala de
-      ensayo, teatro, evento, o lo que sea, <a href="https://wa.link/xy0ozj">contactame aquí</a>.</div>
+      ensayo, teatro, o lo que sea, <a href="https://wa.link/xy0ozj">contactame aquí</a>.</div>
     <nav class="footer-nav">
       <a href="https://forms.gle/GxFXStfQcStopraYA" target="_blank">Proponer álbum</a>
     </nav>
   </footer>
+
+  <!-- Modal "Leer más" (descripciones largas) -->
+  <div class="modal-backdrop" id="modal-backdrop" role="presentation">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button class="modal-close" id="modal-close" type="button" aria-label="Cerrar">&times;</button>
+      <div class="modal-label">Sobre el álbum</div>
+      <h3 class="modal-title" id="modal-title"></h3>
+      <div class="modal-meta" id="modal-meta"></div>
+      <div class="modal-body" id="modal-body" tabindex="0"></div>
+    </div>
+  </div>
 
   <!-- Toast notification -->
   <div class="toast" id="toast"></div>

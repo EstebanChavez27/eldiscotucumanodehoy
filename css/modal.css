@@ -1,0 +1,180 @@
+/* ════════════════════════════════════════════
+   DISCOS TUCUMANOS — Modal "Leer más"
+   (descripciones largas de "Sobre el álbum")
+   Respeta la paleta y tipografías de style.css
+   ════════════════════════════════════════════ */
+
+/* ── Descripción truncada: clicable ── */
+.description-text.description-clicable {
+  cursor: pointer;
+}
+
+/* ── Botón "Leer más" ── */
+.read-more {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--sepia);
+  background: none;
+  border: none;
+  border-bottom: 1px solid transparent;
+  padding: 0;
+  margin-top: 0.6rem;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.read-more:hover {
+  border-color: var(--sepia);
+  color: var(--ink);
+}
+
+/* ════════════════════════════════════════════
+   BACKDROP — fondo oscurecido con blur
+   ════════════════════════════════════════════ */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  z-index: 200;
+
+  /* Animación de entrada/salida */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+.modal-backdrop.abierto {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ════════════════════════════════════════════
+   CONTENIDO DEL MODAL — ficha editorial
+   ════════════════════════════════════════════ */
+.modal {
+  position: relative;
+  background-color: var(--paper);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  color: var(--ink);
+  border: 2px solid var(--ink);
+  box-shadow: 8px 16px 60px rgba(0, 0, 0, 0.45);
+  width: 100%;
+  max-width: 620px;
+  max-height: 80vh;          /* nunca más alto que la pantalla */
+  overflow-y: auto;          /* scrollbar propio para textos largos */
+  padding: 2.5rem 2.75rem;
+
+  /* Micro-animación de aparición */
+  transform: translateY(14px) scale(0.98);
+  transition: transform 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.modal-backdrop.abierto .modal {
+  transform: translateY(0) scale(1);
+}
+
+/* Scrollbar discreto, acorde a la paleta */
+.modal::-webkit-scrollbar {
+  width: 8px;
+}
+
+.modal::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.modal::-webkit-scrollbar-thumb {
+  background: rgba(107, 79, 53, 0.35);
+  border-radius: 4px;
+}
+
+.modal::-webkit-scrollbar-thumb:hover {
+  background: rgba(107, 79, 53, 0.6);
+}
+
+/* ── Botón de cierre × ── */
+.modal-close {
+  position: absolute;
+  top: 0.7rem;
+  right: 0.9rem;
+  background: none;
+  border: none;
+  font-family: 'DM Mono', monospace;
+  font-size: 1.7rem;
+  line-height: 1;
+  color: var(--sepia);
+  cursor: pointer;
+  padding: 0.2rem 0.4rem;
+  transition: color 0.2s, transform 0.2s;
+}
+
+.modal-close:hover {
+  color: var(--rust);
+  transform: scale(1.15);
+}
+
+/* ── Rótulo superior (mismo lenguaje que .section-label) ── */
+.modal-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--sepia);
+  border-top: 1px solid var(--sepia);
+  padding-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+/* ── Título del álbum ── */
+.modal-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.7rem;
+  font-weight: 900;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin: 0;
+  padding-right: 1.5rem;
+}
+
+/* ── Artista · año ── */
+.modal-meta {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--sepia);
+  margin-top: 0.4rem;
+}
+
+/* ── Texto completo de la reseña ── */
+.modal-body {
+  font-family: 'Libre Baskerville', Georgia, serif;
+  font-style: italic;
+  font-size: 0.9rem;
+  line-height: 1.85;
+  color: var(--ink);
+  margin-top: 1.4rem;
+  white-space: pre-line; /* conserva los saltos de línea del formulario */
+  outline: none;
+}
+
+/* ════════════════════════════════════════════
+   RESPONSIVE
+   ════════════════════════════════════════════ */
+@media (max-width: 600px) {
+  .modal {
+    padding: 2rem 1.4rem;
+  }
+
+  .modal-title {
+    font-size: 1.4rem;
+  }
+}
