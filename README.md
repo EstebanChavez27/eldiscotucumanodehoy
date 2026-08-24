@@ -7,8 +7,6 @@ todos los visitantes durante las 24 horas. El catálogo vive en una Google Sheet
 alimentada por un formulario público, y el sitio lo consume directamente desde
 el navegador — sin backend, sin build, sin dependencias.
 
-**Demo local:** abrí `index.html` en el navegador y listo.
-
 ---
 
 ## Características
@@ -113,31 +111,6 @@ Notas:
 
 Esto garantiza: consistencia global, cero reinicios al agregar discos, y
 recorrido completo del catálogo antes de repetir.
-
----
-
-## Publicar en GitHub Pages
-
-1. Creá un repositorio y subí el contenido de esta carpeta
-   (`index.html`, `css/`, `js/`, `assets/`):
-
-   ```bash
-   git init
-   git add .
-   git commit -m "Discos Tucumanos v5"
-   git branch -M main
-   git remote add origin https://github.com/TU_USUARIO/discos-tucumanos.git
-   git push -u origin main
-   ```
-
-2. En GitHub: **Settings → Pages → Source: Deploy from a branch → `main` /
-   `/ (root)` → Save**.
-
-3. En un minuto el sitio estará vivo en
-   `https://TU_USUARIO.github.io/discos-tucumanos/`.
-
-> Alternativas sin configuración extra: arrastrá la carpeta a
-> [Netlify Drop](https://app.netlify.com/drop) o usá Vercel.
 
 ---
 
